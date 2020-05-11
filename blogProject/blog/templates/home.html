@@ -11,6 +11,7 @@
         <th scope=" row">{{blog.id}}</th>
         <td><a href="{%url 'detail' blog.id%}">{{blog.title}}</a></td>
         <td>{{blog.pub_date}}</td>
+        <td>{{blog.author}}</td>
     </tr>
     {% endfor %}
 </tbody>

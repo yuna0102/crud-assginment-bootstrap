@@ -1,18 +1,80 @@
-<header>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
-</header>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>Detail Page</title>
+    <style>
+        #jb-container {
+            width: 940px;
+            margin: 0px auto;
+            padding: 20px;
+            border: 1px solid #333030;
+            background-color: #ffbbd6;
+        }
+
+        #jb-header {
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #bcbcbc;
+            text-align: center;
+            background-color: #f199bc;
+
+        }
+
+        #jb-content {
+            width: 580px;
+            padding: 20px;
+            margin-bottom: 20px;
+            float: left;
+            border: 1px solid #bcbcbc;
+            background-color: #6ec9c9
+        }
+
+        #jb-sidebar {
+            width: 260px;
+            padding: 20px;
+            margin-bottom: 20px;
+            float: right;
+            border: 1px solid #bcbcbc;
+        }
+
+        #jb-footer {
+            clear: both;
+            padding: 20px;
+
+        }
+    </style>
+</head>
 
 <body>
+    <div id="jb-container">
+        <div id="jb-header">
+            <h1> {{blog.title}}</h1>
+        </div>
+        <div id="jb-content">
+            <h2>자세한 내용</h2>
+            <p>{{blog.body}}</p>
+        </div>
+        <div id="jb-sidebar">
+            <h2>작성 시간</h2>
+            <p>
+                <h3>{{blog.pub_date}}</h3>
+            </p>
+            <h2>작성자</h2>
+            <p>
+                <h3>{{blog.author}}</h3>
+            </p>
+        </div>
+        <div id="jb-footer">
+
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+<!-- <body>
     <div class="container">
         <h1> {{blog.title}} </h1>
         <p> {{blog.pub_date}} </p>
@@ -21,4 +83,4 @@
 
         <a href="{%url 'home'%}">HOME</a>
     </div>
-</body>
+</body> -->

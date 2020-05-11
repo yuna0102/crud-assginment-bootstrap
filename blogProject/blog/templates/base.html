@@ -27,14 +27,24 @@
                     <th scope="col">#</th>
                     <th scope="col">Title</th>
                     <th scope="col" style="width:20%"">Date</th>
+                    <th scope=" col">Author</th>
+
                 </tr>
             </thead>
 
             {% block content %}
-            {% endblock %}
+              {% endblock %}
+
         </table>
+
+        <form action='new.html'>
+            <a href="{% url 'new' %}"><input type="button" name="new" value="new" onclick="alert('게시물을 생성하시겠습니까?')">
+            </a>
+        </form>
+
     </div>
 
-    
+
 </body>
+
 </html>
