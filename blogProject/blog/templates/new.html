@@ -1,43 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
-</head>
+{% block content %}
+{% comment %} create url로 보내기 {% endcomment %}
+<form action="{% url 'create' %}">
+    <h4>제목: </h4>
+    <input type="text" name="title">
+    <br>
 
-<body>
-    <!-- {% comment %} 부트스트랩을 활용하여 손쉽게 만들기 {% endcomment %} -->
-    <div class="container">
-        <form action="">
-            <h4>제목: </h4>
-            <input type="text" name="title">
-            <br>
-            <h4>저자: </h4>
-            <input type="text" name="author">
-            <br>
-            <h4>시간: </h4>
-            <input type="text" name="title">
-            <br>
-            <h4>본문: </h4>
-            <textarea cols=40 rows=10 name="body"></textarea>
-            <br>
+    <h4>작성자: </h4>
+    <input type="text" name="author">
+    <br>
 
-            <input class="btn btn-dark" type="submit" value="제출하기">
-        </form>
-    </div>
-</body>
+    <h4>본문: </h4>
+    <textarea cols=40 rows=10 name="body"></textarea>
+    <br>
 
-</html>
+
+
+    <input class="btn btn-dark" type="submit" value="제출하기">
+</form>
+{% endblock %}

@@ -1,86 +1,14 @@
-<html lang="ko">
-
-<head>
-    <meta charset="utf-8">
-    <title>Detail Page</title>
-    <style>
-        #jb-container {
-            width: 940px;
-            margin: 0px auto;
-            padding: 20px;
-            border: 1px solid #333030;
-            background-color: #ffbbd6;
-        }
-
-        #jb-header {
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 1px solid #bcbcbc;
-            text-align: center;
-            background-color: #f199bc;
-
-        }
-
-        #jb-content {
-            width: 580px;
-            padding: 20px;
-            margin-bottom: 20px;
-            float: left;
-            border: 1px solid #bcbcbc;
-            background-color: #6ec9c9
-        }
-
-        #jb-sidebar {
-            width: 260px;
-            padding: 20px;
-            margin-bottom: 20px;
-            float: right;
-            border: 1px solid #bcbcbc;
-        }
-
-        #jb-footer {
-            clear: both;
-            padding: 20px;
-
-        }
-    </style>
-</head>
-
-<body>
-    <div id="jb-container">
-        <div id="jb-header">
-            <h1> {{blog.title}}</h1>
-        </div>
-        <div id="jb-content">
-            <h2>자세한 내용</h2>
-            <p>{{blog.body}}</p>
-        </div>
-        <div id="jb-sidebar">
-            <h2>작성 시간</h2>
-            <p>
-                <h3>{{blog.pub_date}}</h3>
-            </p>
-            <h2>작성자</h2>
-            <p>
-                <h3>{{blog.author}}</h3>
-            </p>
-        </div>
-        <div id="jb-footer">
-
-        </div>
-    </div>
-</body>
-
-</html>
+{% extends 'base.html '%}
 
 
-<!-- <body>
-    <div class="container">
-        <h1> {{blog.title}} </h1>
-        <p> {{blog.pub_date}} </p>
-        <p> {{blog.body}} </p>
-        <br><br>
+{% block content %}
+<h1> {{blog.title}} </h1>
+<p> {{blog.pub_date}} {{blog.author}}</p>
+<p> {{blog.body}} </p>
 
-        <a href="{%url 'home'%}">HOME</a>
-    </div>
-</body> -->
+<br><br>
+
+<a href="{%url 'home'%}">HOME</a>
+<a href="{%url 'edit' blog.id %}">EDIT</a>
+<a href="{%url 'delete' blog.id %}">DELETE</a>
+{% endblock %}
