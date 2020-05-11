@@ -1,0 +1,41 @@
+<header>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+</header>
+
+<body>
+    <!-- {% comment %} 부트스트랩을 활용하여 손쉽게 만들기 {% endcomment %} -->
+    <div class="container">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col" style="width:20%"">Date</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            <!-- {% comment %} 파이썬 문법을 사용해주기 위해서는 {% %} 기호 사용 {% endcomment %}
+            {% comment %} for 문 반복문을 통해 view 에서 넘겨준 객체를 사용한다 {% endcomment %} -->
+            {% for blog in blogs.all %}
+                <tr>
+                <!-- {% comment %} 객체 안의 데이터에 접근하기 위해서는 '.' 을 활용한다 {% endcomment %} -->
+                <th scope=" row">{{blog.id}}</th>
+                    <td><a href="{%url 'detail' blog.id%}">{{blog.title}}</a></td>
+                    <td>{{blog.pub_date}}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+        </table>
+    </div>
+</body>
